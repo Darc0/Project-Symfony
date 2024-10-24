@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Company{% endblock %}
+
+{% block body %}
+    <h1>Company</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ company.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ company.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ company.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_chef_index') }}">back to list</a>
+
+    <a href="{{ path('app_chef_edit', {'id': company.id}) }}">edit</a>
+
+    {{ include('chef/_delete_form.html.twig') }}
+{% endblock %}
